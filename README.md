@@ -10,8 +10,8 @@ echo "module.exports = {extends: ['@commitlint/config-conventional']}" > commitl
 - - -
 
 ## 2 husky
-* husky 是一个增强的 git hook 工具，可以在 git hook 的各个阶段执行我们在 package.json 中配置好的 npm script。*
-* 借助husky在每次 commit 时执行 commitlint来检查我们输入的 message。*
+* husky 是一个增强的 git hook 工具，可以在 git hook 的各个阶段执行我们在 package.json 中配置好的 npm script。
+* 借助husky在每次 commit 时执行 commitlint来检查我们输入的 message。
 #### 安装
 `npm install husky -g`
 #### 在package.json中配置
@@ -27,16 +27,16 @@ echo "module.exports = {extends: ['@commitlint/config-conventional']}" > commitl
 - - -
 
 ## 4 changelog
-* conventional-changelog-cli生成changelog *
-* 从git metadata生成变更日志。*
+* conventional-changelog-cli生成changelog
+* 从git metadata生成变更日志。
 #### 安装
 `npm install conventional-changelog-cli [-D]`
 #### 用法
-根目录下新建 CHANGELOG.md
-在package.json scripts中添加指令
-生成日志
-"conventional-changelog -p angular -i CHANGELOG.md -s"
-包含之前的变更
-"conventional-changelog -p angular -i CHANGELOG.md -s -r 0"
-***在CHANGELOG.md文件中会添加 commit (short)信息***
+根目录下新建 CHANGELOG.md<br/>在package.json scripts中添加指令
++ 生成日志
+  - "conventional-changelog -p angular -i CHANGELOG.md -s"
++ 包含之前的变更
+  - "conventional-changelog -p angular -i CHANGELOG.md -s -r 0"
+  
+**在CHANGELOG.md文件中会添加 commit (short)信息**
 - - -
