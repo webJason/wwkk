@@ -21,3 +21,15 @@ npm install cz-conventional-changelog [-D] [-g]
 见config -- commitizen
 # TODO
 是否必须配置待确定！
+
+# conventional-changelog-cli生成changelog
+## 从git metadata生成变更日志。
+npm install conventional-changelog-cli [-D]
+# 用法：
+根目录下新建 CHANGELOG.md
+在package.json scripts中添加指令
+生成日志
+"conventional-changelog -p angular -i CHANGELOG.md -s"
+包含之前的变更
+"conventional-changelog -p angular -i CHANGELOG.md -s -r 0"
+## 在CHANGELOG.md文件中会添加 commit (short)信息
