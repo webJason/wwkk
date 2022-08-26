@@ -36,26 +36,25 @@ echo "module.exports = {extends: ['@commitlint/config-conventional']}" > commitl
   - "conventional-changelog -p angular -i CHANGELOG.md -s"
 + 包含之前的变更
   - "conventional-changelog -p angular -i CHANGELOG.md -s -r 0"
-  
+
 **在CHANGELOG.md文件中会添加 commit (short)信息**
 - - -
-
 * * *
 # git操作
 #### 创建tag
-`git tag <tagName>`
-* 以某一次特定推送提交tag
+`git tag <tagName>`  
+*以某一次特定推送提交tag*\
 `git tag -a <tagName> <commitID>`
 #### 推送tag
-`git tag origin <tagName>`
-* 有很多未推送的tag，全部推送
+`git push origin <tagName>`  
+*有很多未推送的tag，全部推送*\
 `git push origin --tags`
 
 ## release和tag管理
 * release 可以简单理解为分支(branch)概念
 * tag 仅为一个标记
 #### 关系
-* release 即分支可以基于某一个tag创建，git log查询创建的tag对应的commit
+* release 即分支可以基于某一个tag创建，git log查询创建的tag对应的commit  
 `git checkout <commitID>`
 `git branch <release/xxx>`
 ##### 如 git branch release/1.0.0
