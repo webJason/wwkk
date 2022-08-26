@@ -51,3 +51,14 @@ echo "module.exports = {extends: ['@commitlint/config-conventional']}" > commitl
 `git tag origin <tagName>`
 * 有很多未推送的tag，全部推送
 `git push origin --tags`
+
+## release和tag管理
+* release 可以简单理解为分支(branch)概念
+* tag 仅为一个标记
+#### 关系
+* release 即分支可以基于某一个tag创建，git log查询创建的tag对应的commit
+`git checkout <commitID>`
+`git branch <release/xxx>`
+##### 如 git branch release/1.0.0
+在新建release分支上可以进行基于当前版本的修改，新增tag等操作<br />
+可以多种方式将代码合并到master，如 git merge、pr、git cherry-pick 等<br />
