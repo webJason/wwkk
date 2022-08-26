@@ -6,7 +6,6 @@ Jason's project
 `npm install -g @commitlint/cli @commitlint/config-conventional`
 #### 生成commitlint.config.js 配置文件
 echo "module.exports = {extends: ['@commitlint/config-conventional']}" > commitlint.config.js
-* * *
 - - -
 
 ## 2 husky
