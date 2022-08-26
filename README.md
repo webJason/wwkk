@@ -40,3 +40,14 @@ echo "module.exports = {extends: ['@commitlint/config-conventional']}" > commitl
   
 **在CHANGELOG.md文件中会添加 commit (short)信息**
 - - -
+
+* * *
+# git操作
+#### 创建tag
+`git tag <tagName>`
+* 以某一次特定推送提交tag
+`git tag -a <tagName> <commitID>`
+#### 推送tag
+`git tag origin <tagName>`
+* 有很多未推送的tag，全部推送
+`git push origin --tags`
