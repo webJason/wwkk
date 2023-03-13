@@ -31,8 +31,8 @@ Git 的分支，其实本质上仅仅是指向提交对象的可变指针。
 
 ### 相关命令
 ```
-git branch xxx      // 创建新分支
-git push origin xxx // 推送本地分支到远程仓库
+git branch <xxx> <commitID>      // (基于某一个commit)创建新分支
+git push origin xxx // 推送本地分支到远程仓库 // 关联远程分支-u 或 --set-upstream
 git branch          // 查看本地分支
 git branch -a       // 查看远程分支
 git branch -v       // 查看各分支最新一次提交 -v或-vv
@@ -54,4 +54,6 @@ git branch --no-merged // 包含未合并工作的分支
 git checkout -b develop origin/develop
 git checkout --track origin/develop
 git checkout develop
+// 删除远程分支
+git push origin -d dev
 ```
