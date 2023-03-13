@@ -3,7 +3,8 @@ Jason's project
 
 ## 1 commitlint
 #### 安装
-`npm install -g @commitlint/cli @commitlint/config-conventional`
+`npm install -g @commitlint/cli @commitlint/config-conventional`  
+`npm install --save-dev @commitlint/config-conventional @commitlint/cli`
 #### 生成commitlint.config.js 配置文件
 echo "module.exports = {extends: ['@commitlint/config-conventional']}" > commitlint.config.js
 - - -
@@ -12,24 +13,55 @@ echo "module.exports = {extends: ['@commitlint/config-conventional']}" > commitl
 * husky 是一个增强的 git hook 工具，可以在 git hook 的各个阶段执行我们在 package.json 中配置好的 npm script。
 * 借助husky在每次 commit 时执行 commitlint来检查我们输入的 message。
 #### 安装
-`npm install husky -g`
-#### 在package.json中配置
-见"husky"
+`npm install husky -g`  
+`npm install husky --save-dev`
+#### 在package.json中配置引入
+见"husky" ***不必须***
+```
+...
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  }, // 或
+  "gitHooks": {
+    "commit-msg": "commitlint -E GIT_PARAMS"
+  }
+```
+当我们在当前项目中执行 git commit -m '测试提交' 时将触发commit-msg事件钩子并通知husky  
+它将读取commitlint.config.js配置规则并对我们刚刚提交的测试提交这串文字进行校验
+**备注**  
+`npx husky-init`  
+```
+husky - Git hooks installed
+husky - created .husky/pre-commit
+```
+`npx husky add .husky/commit-msg "npx --no -- commitlint --edit ${1}"`
+```
+husky - created .husky/commit-msg
+```
 - - -
 
 ## 3 commitizen
-`npm install commitizen [-D] [-g]`
-`npm install cz-conventional-changelog [-D] [-g]`
+`npm install commitizen [-g]`  
+~~`npm install cz-conventional-changelog [-g]`~~
 ##### 在package.json中配置
 见config -- commitizen
-~~是否必须配置待确定！~~
+```
+"config": {
+  "commitizen": {
+    "path": "./node_modules/cz-conventional-changelog"
+  }
+}
+```
 - - -
 
 ## 4 changelog
 * conventional-changelog-cli生成changelog
 * 从git metadata生成变更日志。
 #### 安装
-`npm install conventional-changelog-cli [-D]`
+`npm install conventional-changelog-cli [-D]`  
+*目前集成了包括 atom, codemirror, ember, eslint, express, jquery 等项目的标准*
 #### 用法
 根目录下新建 CHANGELOG.md<br/>在package.json scripts中添加指令
 + 生成日志
