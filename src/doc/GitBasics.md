@@ -20,12 +20,15 @@ git add xx.txt
 ```
 *取消暂存、撤销修改*
 ```
-git reset HEAD <file>...
-// 参数如--hard、--soft
+git reset HEAD <file>... // 参数如--hard、--soft
 
 git checkout -- <file>
 ```
-
+## 提交更新 
+```
+git commit -m 'xxx'
+git commit --amend // 修改commit信息
+```
 ## 查看提交历史
 ```
 git log
@@ -46,3 +49,6 @@ git merge
 git pull
 git push origin master
 ```
+## 其他
+*别名*
+`git config --global alias.lg  'log --graph --oneline'`
