@@ -24,6 +24,15 @@ git reset HEAD <file>... // 参数如--hard、--soft
 
 git checkout -- <file>
 ```
+```
+git stash
+git stash save 'xx'
+
+git stash list
+git stash pop
+git stash pop stash@{id} // 取出（apply取出但不删除）
+git stash drop stash@{id}
+```
 ## 提交更新 
 ```
 git commit -m 'xxx'
@@ -38,7 +47,7 @@ git log --oneline --decorate --graph --all
 ## 远程仓库
 ```
 git remote -v
-git remote show origin
+git remote show origin // 远程仓库信息
 git remote rm webJason
 git remote add webJason git@github.com:webJason
 git remote rename webJason jw // 重命名webJason => jw

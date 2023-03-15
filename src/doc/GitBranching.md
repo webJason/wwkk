@@ -54,7 +54,7 @@ git branch -d hotfix
 ```
 *其他*  
 ```
-git ls-remote origin // 远程引用到完整列表
+git ls-remote origin // 远程引用到完整列表(各分支对应的HEAD)
 ```
 ```
 // 切换分支（远程的分支添加到本地）
