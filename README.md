@@ -1,5 +1,6 @@
 # wwkk
-Jason's project
+git常用命令 /src/doc/
+Jason created.
 
 ## 1 commitlint
 #### 安装
