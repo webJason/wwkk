@@ -21,8 +21,14 @@ git add xx.txt
 *取消暂存、撤销修改*
 ```
 git reset HEAD <file>... // 参数如--hard、--soft
+git reset HEAD -- . // 撤销所有暂存
+git reset HEAD xx.js // 从暂存区撤销
 
-git checkout -- <file>
+git checkout -- <file> // 撤销修改
+
+删除
+git rm --cached filename 删除指针
+git rm -f filename 删除文件
 ```
 ## 提交更新 
 ```
@@ -52,3 +58,6 @@ git push origin master
 ## 其他
 *别名*
 `git config --global alias.lg  'log --graph --oneline'`
+*查看git操作历史 - 回到某一次操作*
+`git reflog`
+`git reset --hard id 或者 git reset --hard HEAD@{2}`

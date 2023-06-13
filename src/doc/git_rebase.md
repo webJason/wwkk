@@ -29,7 +29,7 @@ git rebase master // 将feature基底修改为commit-N
 ```
 ```
 // =>
-gir rebase master feature // feature 续到master后面
+git rebase master feature // feature 续到master后面
 git rebase feature // 在master执行 将feature提交前置到master新提交前
 ```
 ```
@@ -43,7 +43,11 @@ git rebase --onto master server client
 解决冲突
 git add 冲突文件 // 依次解决
 git rebase --continue // 不是git commit
+
+出现(<branch-name>|REBASE */*) 解决方式
+git rebase --abort // 中止
 ```
+
 * 好处 提交记录简洁，不存在分叉（与git merge相比）  
 * 缺点 操作后不知道当前分支最早是基于哪个分支
 - - -
